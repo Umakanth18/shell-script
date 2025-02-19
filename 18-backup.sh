@@ -59,5 +59,5 @@ if [ -n "$FILES" ]
 then 
    echo "Files are: $FILES"
 else   
-   echo "No Files found"
+   echo "No Files found older tahn $DAYS"
 fi
