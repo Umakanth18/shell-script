@@ -25,29 +25,7 @@ VALIDATE() {
     fi
 }
 
-USAGE(){
-   echo -e "$R USAGE:: $N sh 18-backup.sh <SOURCE_DIR> <DEST_DIR> <DAYS(optional>"
-   exit 1
-}
 
-mkdir -p /home/ec2-user/shellscript-logs/
-
-if [ $# -lt 2 ]
-then 
-    USAGE
-fi    
-
-if [ ! -d $SOURCE_DIR ]
-then 
-   echo -e " $R $SOURCE_DIR $N Does not exist....Please check"
-   exit 1
-fi
-
-if [ ! -d $DEST_DIR ]
-then 
-   echo -e " $R $DEST_DIR $N Does not exist....Please check"
-   exit 1
-fi
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
