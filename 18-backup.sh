@@ -12,7 +12,7 @@ DAYS=${3:-14} # if user is not providing no. of days we are taking 14 days as de
 
 LOGS_FOLDER="/home/ec2-user/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
-TIME_STAMP=$(date +%Y-%m-%d-%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 USAGE(){
@@ -21,7 +21,7 @@ USAGE(){
 }
 
 mkdir -p /home/ec2-user/shellscript-logs/
-
+echo "Filename: $0"
 if [ $# -lt 2 ]
 then 
     USAGE
@@ -46,7 +46,7 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 if [ -n "$FILES" ] # true if there are files to zip
 then 
    echo "Files are: $FILES"
-   ZIP_FILE="$DEST_DIR/app-logs-$TIME_STAMP.zip"
+   ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
    find $SOURCE_DIR -name "*.log" -mtime +$DAYS | zip -@ "$ZIP_FILE"
    if [ -f "$ZIP_FILE" ]
    then 
