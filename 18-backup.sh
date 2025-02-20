@@ -17,7 +17,7 @@ LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 USAGE(){
    #echo -e "$R USAGE:: $N sh 18-backup.sh <SOURCE_DIR> <DEST_DIR> <DAYS(optional>"
-   echo -e "$R USAGE:: $N sh backup <SOURCE_DIR> <DEST_DIR> <DAYS(optional>"
+   echo -e "$R USAGE:: $N sh backup <SOURCE_DIR> <DEST_DIR> <DAYS(optionAl>"
    exit 1
 }
 
